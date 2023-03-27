@@ -2,13 +2,13 @@ package Main;
 
 public class Item {
     String name;
-    int price;
+    double price;
     double priceMultiplier;
     double cookiesPerSecond;
     int buttonNumber;
     int numberOwned;
 
-    public Item(String name, int price, double priceMultiplier, double cookiesPerSecond, int numberOwned,int buttonNumber){
+    public Item(String name, double price, double priceMultiplier, double cookiesPerSecond, int numberOwned,int buttonNumber){
         this.name = name;
         this.price = price;
         this.priceMultiplier = priceMultiplier;

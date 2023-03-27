@@ -1,7 +1,5 @@
 package Main;
 
-
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -42,7 +40,7 @@ public class CookieMain {
 
         // ADD ACTION LISTEN TO ALL BUTTONS
         ClickerHandler clickerHandler = new ClickerHandler(counterLabel, perSecondLabel, buttons);
-        for (int i = 0; i < buttons.length; i++){
+        for (int i = 0; i < buttons.length-1; i++){
             buttons[i].addActionListener(clickerHandler);
         }
 
@@ -101,6 +99,7 @@ public class CookieMain {
         shopPanel.add(buttons[4]);
         shopPanel.add(buttons[5]);
         shopPanel.add(buttons[6]);
+        shopPanel.add(buttons[7]);
 
 
         window.setVisible(true);
@@ -111,13 +110,13 @@ public class CookieMain {
         int i = 1;
         for (String name : buttonNames){
                 buttons[i] = new JButton();
+                ImageIcon icon =  new ImageIcon(getClass().getResource("/res/" + name + ".png"));
+                buttons[i].setIcon(icon);
                 buttons[i].setForeground(Color.WHITE);
                 buttons[i].setActionCommand(name);
-                buttons[i].setPreferredSize(new Dimension(200,50));
+                buttons[i].setPreferredSize(new Dimension(200,70));
                 buttons[i].setCursor(new Cursor(Cursor.HAND_CURSOR));
                 buttons[i].setBounds(0,y,200, 50);
-
-                System.out.println(!name.equalsIgnoreCase("Cursor"));
                 if (!name.equalsIgnoreCase("Cursor")){
                     buttons[i].setText("Cost: ???");
                     TitledBorder title = BorderFactory.createTitledBorder("?????");
@@ -132,7 +131,7 @@ public class CookieMain {
                     title.setTitleJustification(TitledBorder.CENTER);
                     buttons[i].setBorder(title);
                 }
-                y += 50; 
+                y += 75; 
                 i++;
         }
     }
